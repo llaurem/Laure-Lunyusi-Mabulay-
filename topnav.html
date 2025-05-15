@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LinkedIn Nav </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0073b1;
+    }
+
+    .logo span {
+      background-color: #0073b1;
+      color: white;
+      padding: 0 4px;
+      border-radius: 2px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .right-section {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    nav a {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      color: #555;
+      text-decoration: none;
+      transition: color 0.2s ease; 
+      
+    }
+
+    nav a:hover {
+      color: #0073b1;
+    }
+
+    nav a.get-app {
+      padding: 0 16px;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .join {
+      font-size: 14px;
+      color: #555;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .join:hover {
+      color: #0073b1;
+    }
+
+    .sign-in {
+      font-size: 14px;
+      font-weight: 500;
+      color: #0073b1;
+      border: 1px solid #0073b1;
+      padding: 6px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .sign-in:hover {
+      background-color: #e6f0f6;
+    }
+
+    /* Responsive for mobile */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+   
+
+      .right-section {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .right-section.active {
+    display: flex;
+  }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+      nav a {
+    flex-direction: row; /* side by side on mobile */
+    gap: 8px;
+  }
+
+      .actions {
+        justify-content: center;
+        width: 100%;
+      }
+      nav a.get-app {
+    padding: 0;
+    border: none;
+  }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Logo -->
+    <div class="logo">
+      Linked<span>in</span>
+    </div>
+    <!-- Hamburger toggle menu for mobile view  -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Right side: Nav + Actions -->
+    <div class="right-section">
+      <nav>
+        <a href="https://www.linkedin.com/pulse/topics/home/?trk=guest_homepage-basic_guest_nav_menu_articles">
+          <i class="fas fa-newspaper fa-lg"></i>
+          <span>Articles</span>
+        </a>
+        <a href="https://www.linkedin.com/pub/dir/+/+?trk=content-hub-home-page_guest_nav_menu_people">
+          <i class="fas fa-user-friends fa-lg"></i>
+          <span>Personnes</span>
+        </a>
+        <a href="https://www.linkedin.com/learning/search?trk=content-hub-home-page_guest_nav_menu_learning">
+          <i class="fas fa-book fa-lg"></i>
+          <span>LinkedIn learning</span>
+        </a>
+        <a href="https://www.linkedin.com/jobs/search?trk=games_guest_nav_menu_jobs&position=1&pageNum=0">
+          <i class="fas fa-briefcase fa-lg"></i>
+          <span>Offres d'emploi</span>
+        </a>
+        <a href="https://www.linkedin.com/games?trk=games_guest_nav_menu_games">
+          <i class="fas fa-puzzle-piece fa-lg"></i>
+          <span>Jeux</span>
+        </a>
+        <a href="#" class="get-app">
+          <i class="fas fa-tablet-alt fa-lg"></i>
+          <span>Telecharger l'application</span>
+        </a>
+      </nav>
+
+      <div class="actions">
+        <a href="https://www.linkedin.com/signup/cold-join?session_redirect=%2Fgames%3Ftrk%3Dgames_guest_nav_menu_games&trk=games_nav-header-join" class="join">Join now</a>
+        <a href="https://www.linkedin.com/uas/login?session_redirect=%2Fgames%3Ftrk%3Dgames_guest_nav_menu_games&fromSignIn=true&trk=games_nav-header-signin" class="sign-in">Sign in</a>
+      </div>
+    </div>
+  </header>
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.right-section');
+      menu.classList.toggle('active');
+    }
+  </script>
+  
+
+</body>
+</html>
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire d'authentification</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <link href="tableauDB.html">
+  <link href="forgotPW.html">
+</head>
+
+<body>
+
+  <!-- login -->
+  <div class="container">
+    <div class="form-box login">
+      <form action="tableauDB.html">
+        <h1>Formulaire d'authentification</h1>
+        <h2>Se connecter</h2>
+        <div class="input-box">
+          <input type="text" id="Username" placeholder="Entrer votre nom d'utilisateur..." required>
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="input-box">
+          <input type="password" id="password" placeholder="Entrer votre mot de pass..." required>
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <div class="forgot-link">
+          <a href="forgotPW.html">Vous avez oublie votre mot de passe?</a>
+        </div>
+        <button type="submit" class="btn">Se connecter</button>
+        <p> Ou souhaitez vous vous connectez avec une autre platform?</p>
+        <div class="social-icons">
+          <a href="https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&hl=en&service=accountsettings&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S-1473226895%3A1747281153950613"> <i class="fa-brands fa-google"></i> </a>
+          <a href="https://fr-fr.facebook.com/login/?next=https%3A%2F%2Ffr-fr.facebook.com%2F%2523_%3D_%2F"> <i class="fa-brands fa-facebook"></i> </a>
+          <a href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsignup%3Fsource%3Dform-home-signup%26user_email%3D"> <i class="fa-brands fa-github"></i> </a>
+        </div>
+      </form>
+    </div>
+
+    
+<!-- registration  -->
+    <div class="form-box register">
+      <form action="tableauDB.html">
+        <h1>Formulaire d'inscription</h1>
+        <div class="input-box">
+          <input type="text" id="email" placeholder="Entrer votre email adress..." required>
+          <i class="fa-regular fa-envelope"></i>
+        </div>
+        <div class="input-box">
+          <input type="text" id="name" placeholder="Entrer votre nom ..." required>
+        </div>
+        <div class="input-box">
+          <input type="password" id="password" placeholder="Entrer votre mot de pass..." required>
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <div class="input-box">
+          <input type="password" id="password" placeholder="Confirmer votre mot de pass..." required>
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <button type="submit" class="btn">S'inscrire'</button>
+        <p> Ou souhaitez vous vous inscrire avec une autre platform?</p>
+        <div class="social-icons">
+          <a href="https://accounts.google.com/lifecycle/steps/signup/name?authuser=0&continue=https://myaccount.google.com/?utm_source%3Dsign_in_no_continue%26pli%3D1&dsh=S-1558318600:1747280988379363&ec=GAlAwAE&flowEntry=SignUp&flowName=GlifWebSignIn&hl=en&service=accountsettings&TL=AArrULRjPdxc9QzsqP9CoqvcPr8F-W6B0hIuI9cba5ZoibEMnPDLr0zZQO8FgJeL"><i class="fa-brands fa-google"></i></a>
+          <a href="https://www.facebook.com/reg/"> <i class="fa-brands fa-facebook"></i> </a>
+          <a href="https://github.com/signup?source=form-home-signup&user_email="> <i class="fa-brands fa-github"></i> </a>
+        </div>
+      </form>
+    </div>
+
+    <!-- toggle box to go from login to register -->
+
+    <div class="toggle-box">
+      <div class="toggle-panel toggle-left">
+        <h3> Bienvenue!</h3>
+        <p>Vous n'avez pas encore de compte?</p>
+        <button class="btn register-btn">S'inscrire</button>
+      </div>
+
+    <!-- adding the toggle panel right to swipe from login to register -->
+      <div class="toggle-panel toggle-right">
+        <h3> Bonjour!</h3>
+        <p>Vous avez deja un compte?</p>
+        <button class="btn login-btn">Se connecter</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+// this script will create a event lsitener that will make the toggle move from login to register by adding the toggle and go back by removing it.
+
+    const container = document.querySelector('.container');
+    const registerBtn = document.querySelector('.register-btn');
+    const loginBtn = document.querySelector('.login-btn');
+
+    registerBtn.addEventListener('click', () => {
+      container.classList.add('active');
+    });
+
+    loginBtn.addEventListener('click', () => {
+      container.classList.remove('active');
+    });
+
+  </script>
+</body>
+</html>
